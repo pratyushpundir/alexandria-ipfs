@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: ipfs/v1/ipfs.proto
 
-package ipfspb
+package ipfsv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -758,7 +758,8 @@ const file_ipfs_v1_ipfs_proto_rawDesc = "" +
 	"\n" +
 	"PinContent\x12%.alexandria.ipfs.v1.PinContentRequest\x1a&.alexandria.ipfs.v1.PinContentResponse\x12a\n" +
 	"\fUnpinContent\x12'.alexandria.ipfs.v1.UnpinContentRequest\x1a(.alexandria.ipfs.v1.UnpinContentResponse\x12d\n" +
-	"\rGetGatewayURL\x12(.alexandria.ipfs.v1.GetGatewayURLRequest\x1a).alexandria.ipfs.v1.GetGatewayURLResponseB=Z;github.com/pratyushpundir/alexandria-services/gen/ipfs/v1;ipfspbb\x06proto3"
+	"\rGetGatewayURL\x12(.alexandria.ipfs.v1.GetGatewayURLRequest\x1a).alexandria.ipfs.v1.GetGatewayURLResponseB\xcf\x01\n" +
+	"\x16com.alexandria.ipfs.v1B\tIpfsProtoP\x01Z@github.com/pratyushpundir/alexandria-services/gen/ipfs/v1;ipfsv1\xa2\x02\x03AIX\xaa\x02\x12Alexandria.Ipfs.V1\xca\x02\x12Alexandria\\Ipfs\\V1\xe2\x02\x1eAlexandria\\Ipfs\\V1\\GPBMetadata\xea\x02\x14Alexandria::Ipfs::V1b\x06proto3"
 
 var (
 	file_ipfs_v1_ipfs_proto_rawDescOnce sync.Once

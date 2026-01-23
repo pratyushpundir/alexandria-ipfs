@@ -4,7 +4,7 @@
 // - protoc             (unknown)
 // source: ipfs/v1/ipfs.proto
 
-package ipfspb
+package ipfsv1
 
 import (
 	context "context"
