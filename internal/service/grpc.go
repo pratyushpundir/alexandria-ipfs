@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	pb "github.com/pratyushpundir/alexandria-api/gen/ipfs/v1"
+	pb "github.com/pratyushpundir/alexandria-services/gen/ipfs/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

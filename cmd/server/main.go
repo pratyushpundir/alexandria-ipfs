@@ -12,10 +12,10 @@ import (
 	"google.golang.org/grpc/health/grpc_health_v1"
 	"google.golang.org/grpc/reflection"
 
-	"github.com/pratyushpundir/alexandria-ipfs/internal/config"
-	"github.com/pratyushpundir/alexandria-ipfs/internal/service"
+	"github.com/pratyushpundir/alexandria-services/internal/config"
+	"github.com/pratyushpundir/alexandria-services/internal/service"
 
-	pb "github.com/pratyushpundir/alexandria-api/gen/ipfs/v1"
+	pb "github.com/pratyushpundir/alexandria-services/gen/ipfs/v1"
 )
 
 func main() {

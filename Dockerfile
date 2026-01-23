@@ -1,14 +1,13 @@
 FROM golang:1.25-alpine AS builder
 
-WORKDIR /build
+WORKDIR /app
 
-# Copy the entire project for the replace directive
-COPY . .
-
-WORKDIR /build/services/ipfs
-
-# Download dependencies
+# Copy go mod files
+COPY go.mod go.sum ./
 RUN go mod download
+
+# Copy source code
+COPY . .
 
 # Build the binary
 RUN CGO_ENABLED=0 GOOS=linux go build -o /server ./cmd/server

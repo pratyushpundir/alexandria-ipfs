@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package alexandria.ipfs.v1;
+
+option go_package = "github.com/pratyushpundir/alexandria-api/gen/ipfs/v1;ipfspb";
+
+// IPFSService handles content storage and retrieval via Blockfrost IPFS
+service IPFSService {
+  // Content upload
+  rpc UploadContent(UploadContentRequest) returns (UploadContentResponse);
+  rpc UploadProto(UploadProtoRequest) returns (UploadProtoResponse);
+
+  // Content retrieval
+  rpc GetContent(GetContentRequest) returns (GetContentResponse);
+  rpc GetProto(GetProtoRequest) returns (GetProtoResponse);
+
+  // Pin management
+  rpc PinContent(PinContentRequest) returns (PinContentResponse);
+  rpc UnpinContent(UnpinContentRequest) returns (UnpinContentResponse);
+
+  // Gateway URL generation
+  rpc GetGatewayURL(GetGatewayURLRequest) returns (GetGatewayURLResponse);
+}
+
+// ============================================================================
+// Upload Messages
+// ============================================================================
+
+message UploadContentRequest {
+  bytes data = 1;
+  string filename = 2;
+  string mime_type = 3;
+}
+
+message UploadContentResponse {
+  string cid = 1;
+  int64 size_bytes = 2;
+}
+
+message UploadProtoRequest {
+  bytes proto_data = 1;
+  string proto_type = 2;
+}
+
+message UploadProtoResponse {
+  string cid = 1;
+  int64 size_bytes = 2;
+}
+
+// ============================================================================
+// Retrieval Messages
+// ============================================================================
+
+message GetContentRequest {
+  string cid = 1;
+}
+
+message GetContentResponse {
+  bytes data = 1;
+  string mime_type = 2;
+  int64 size_bytes = 3;
+}
+
+message GetProtoRequest {
+  string cid = 1;
+  string proto_type = 2;
+}
+
+message GetProtoResponse {
+  bytes proto_data = 1;
+}
+
+// ============================================================================
+// Pin Management Messages
+// ============================================================================
+
+message PinContentRequest {
+  string cid = 1;
+}
+
+message PinContentResponse {
+  bool success = 1;
+}
+
+message UnpinContentRequest {
+  string cid = 1;
+}
+
+message UnpinContentResponse {
+  bool success = 1;
+}
+
+// ============================================================================
+// Gateway Messages
+// ============================================================================
+
+message GetGatewayURLRequest {
+  string cid = 1;
+}
+
+message GetGatewayURLResponse {
+  string url = 1;
+}
