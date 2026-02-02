@@ -24,11 +24,21 @@ Go gRPC microservice for IPFS content storage via Blockfrost.
 
 ### Environment Variables
 
+Copy `.env.example` to `.env` and configure:
+
 ```bash
-BLOCKFROST_API_KEY=your-blockfrost-ipfs-key
-BLOCKFROST_IPFS_URL=https://ipfs.blockfrost.io/api/v0
 GRPC_PORT=9092
+BLOCKFROST_IPFS_PROJECT_ID=your_blockfrost_ipfs_project_id
+BLOCKFROST_IPFS_BASE_URL=https://ipfs.blockfrost.io/api/v0
+IPFS_GATEWAY_URL=https://ipfs.blockfrost.dev/ipfs
 ```
+
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `GRPC_PORT` | No | 9092 | gRPC server port |
+| `BLOCKFROST_IPFS_PROJECT_ID` | Yes | - | Blockfrost IPFS project ID |
+| `BLOCKFROST_IPFS_BASE_URL` | No | https://ipfs.blockfrost.io/api/v0 | Blockfrost IPFS API URL |
+| `IPFS_GATEWAY_URL` | No | https://ipfs.blockfrost.dev/ipfs | Gateway for content retrieval |
 
 ### Running Locally
 
